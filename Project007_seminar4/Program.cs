@@ -96,19 +96,21 @@
 // заполненный нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-// void Mas(int[] array)
+// int[] Mas()
 // {
+//     int[] array = new int[8];
 //     for (int i = 0; i < array.Length; i++)
 //     {
 //         array[i] = new Random().Next(0, 2);
 //         Console.Write($"{array[i]}, ");
 //     }
 //     Console.WriteLine();
+//     return array;
 // }
 
 
-// int[] array = new int[8];
-// Mas(array);
+// int[] array = Mas();
+
 
 
 ///////////////////////////////////////////////////////
