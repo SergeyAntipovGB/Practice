@@ -189,80 +189,79 @@
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
 
-// void FillArray(int[] array)
-// {
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         array[i] = new Random().Next(1, 10);
-//     }
-// }
-
-// void PrintArray(int[] array)
-// {
-//     foreach (int el in array)
-//     {
-//         Console.Write($"{el} ");
-//     }
-//     Console.WriteLine();
-// }
-
-// int[] Sum(int[] array)
-// {
-//     int[] res = new int[array.Length / 2 + array.Length % 2];
-//     for (int i = 0; i < array.Length / 2; i++)
-//     {
-//         res[i] = array[i] * array[array.Length - 1 - i];
-//     }
-//     if (array.Length % 2 != 0)
-//     {
-//         res[array.Length / 2] = array[array.Length / 2];
-//     }
-
-//     return res;
-
-// }
-
-
-// Console.Write("Введите количество элементов массива: ");
-// int N = Convert.ToInt32(Console.ReadLine());
-// int[] array = new int[N];
-
-// FillArray(array);
-// PrintArray(array);
-// int[] result = Sum(array);
-// PrintArray(result);
-
-// =====================
-
 void FillArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
-        array[i] = new Random().Next(0, 101);
+    {
+        array[i] = new Random().Next(1, 10);
+    }
 }
 
 void PrintArray(int[] array)
 {
     foreach (int el in array)
+    {
         Console.Write($"{el} ");
+    }
     Console.WriteLine();
 }
 
-int[] CreateSumArray(int[] array)
+int[] Sum(int[] array)
 {
-    int[] sumArray = new int[array.Length / 2 + array.Length % 2];
+    int[] res = new int[array.Length / 2 + array.Length % 2];
     for (int i = 0; i < array.Length / 2; i++)
-        sumArray[i] = (array[i] * array[^(i + 1)]);
-    if ((array.Length / 2 + 1) != 0)
-        sumArray[array.Length / 2 + 1] = array[^1];
-    return sumArray;
+    {
+        res[i] = array[i] * array[array.Length - 1 - i];
+    }
+    if (array.Length % 2 != 0)
+    {
+        res[array.Length / 2] = array[array.Length / 2];
+    }
+
+    return res;
+
 }
 
-Console.Write("Введите количество чисел массива > ");
-int[] array = new int[Convert.ToInt32(Console.ReadLine())];
+
+Console.Write("Введите количество элементов массива: ");
+int N = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[N];
+
 FillArray(array);
 PrintArray(array);
-int[] sumArray = CreateSumArray(array);
-PrintArray(sumArray);
+int[] result = Sum(array);
+PrintArray(result);
+
+// =====================
+
+// void FillArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//         array[i] = new Random().Next(0, 11);
+// }
+
+// void PrintArray(int[] array)
+// {
+//     foreach (int el in array)
+//         Console.Write($"{el} ");
+//     Console.WriteLine();
+// }
+
+// void CreateSumArray(int[] array, int[] sumArray)
+// {
+//     for (int i = 0; i < array.Length / 2; i++)
+//         sumArray[i] = (array[i] * array[^(i + 1)]);
+//     if ((array.Length % 2) != 0)
+//         sumArray[^1] = array[array.Length / 2];
+// }
+
+// Console.Write("Введите количество чисел массива > ");
+// int[] array = new int[Convert.ToInt32(Console.ReadLine())];
+// FillArray(array);
+// PrintArray(array);
+// int[] sumArray = new int[array.Length / 2 + array.Length % 2];
+// CreateSumArray(array, sumArray);
+// PrintArray(sumArray);
 // =========================
 
 
